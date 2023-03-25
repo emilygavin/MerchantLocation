@@ -16,10 +16,10 @@ public class MerchantLocationApplication {
 	CommandLineRunner runner (MerchantRepository repository) {
 		return args -> {
 			Merchant merchant = new Merchant(
-					"52.986375", "-6.043701", 12, "Tesco"
+					"52.986375", "-6.043701", 14, "Tesco"
 			);
 
-			repository.insert(merchant);
+			//repository.insert(merchant);
 		};
 	}
 

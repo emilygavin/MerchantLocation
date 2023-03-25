@@ -2,6 +2,7 @@ package com.example.MerchantLocationApplication;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -11,6 +12,7 @@ public class Merchant {
     private String id;
     private String latitude;
     private String longitude;
+    @Indexed(unique = true)
     private int merchantId;
     private String merchantName;
 

@@ -13,14 +13,7 @@ public class MerchantLocationApplication {
 	}
 
 	@Bean
-	CommandLineRunner runner (MerchantRepository repository) {
-		return args -> {
-			Merchant merchant = new Merchant(
-					"52.986375", "-6.043701", 14, "Tesco"
-			);
-
-			//repository.insert(merchant);
-		};
+	CommandLineRunner runner () {
+		return args -> {};
 	}
-
 }

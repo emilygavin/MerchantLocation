@@ -6,18 +6,22 @@ Here is an example of what the merchant array looks like:
 ```
 [
     {
-    "id": "64202fb98cc7ed226971a68a",
-    "latitude": 52.23459935,
-    "longitude": -6.87520395,
-    "merchantId": 15,
-    "merchantName": "Centra"
+        "id": "64220a5ad25bdb63d31b746c",
+        "coordinates": {
+            "latitude": 52.986375,
+            "longitude": -6.043701
+        },
+        "merchantId": 12,
+        "merchantName": "Tesco"
     },
     {
-    "id": "642034fe77ca4c22e4c03fb3",
-    "latitude": 54.786276512,
-    "longitude": -8.58672945,
-    "merchantId": 12,
-    "merchantName": "Tesco"
+        "id": "64220b2ad25bdb63d31b746e",
+        "coordinates": {
+            "latitude": 53.7530928,
+            "longitude": -5.7820276
+        },
+        "merchantId": 13,
+        "merchantName": "Centra"
     }
 ]
 ```
@@ -38,10 +42,12 @@ docker-compose up -d
 http://localhost:8080/merchants : Used with either GET or POST. GET will return a list of all merchants, and POST can be used to register a new merchant. E.g. of body for POST :
 ```
 {
-"latitude": 56.78394827,
-"longitude": -3.5780395,
-"merchantId": 18,
-"merchantName": "Tesco"
+        "coordinates": {
+            "latitude": 53.27196312847761,
+            "longitude": -6.199368238449098
+        },
+        "merchantId": 99,
+        "merchantName": "Londis"
 }
 ```
 ## GET (individual)
@@ -54,14 +60,16 @@ localhost:8080/merchants/delete/{{id}} : This endpoint will delete an individual
 localhost:8080/merchants/update/{{id}} : This endpoint will update an individual merchant by ID. This work by entering the merchant id into the endpoint and also sending through a JSON body. Here is an example of a JSON body that is accepted for a PUT method:
 ```
 {
-"id": "64203d68db1e59504ffbce10",
-"latitude": 51.78394827,
-"longitude": -3.5780395,
-"merchantId": 17,
-"merchantName": "Londis"
+    "id": "64221422758c9d25bfa48a00",
+    "coordinates": {
+        "latitude": 53.53798298,
+        "longitude": -7.94689283
+    },
+    "merchantId": 16,
+    "merchantName": "Circle K"
 }
 ```
 ## GET (List by nearest location)
-http://localhost:8080/merchants/location?latitude=54.786276512&longitude=-8.58672945 : This endpoint will return a list of merchants based of the nearest proximity to given coordinates.
+http://localhost:8080/merchants/location?latitude={{latitude}}&longitude={{longitude}} : This endpoint will return a list of merchants based of the nearest proximity to given coordinates.
 This works by QUERYing data. Two data variable called "longitude" and "latitude" and sent through with different values. The list return will be a list of the nearest merchants in order based off the proximity to the given coordinates.
 

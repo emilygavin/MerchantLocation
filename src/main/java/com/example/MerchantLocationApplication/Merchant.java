@@ -7,18 +7,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-public class Merchant {
+public class Merchant{
     @Id
     private String id;
-    private Double latitude;
-    private Double longitude;
+    private Coordinates coordinates;
     @Indexed(unique = true)
     private int merchantId;
     private String merchantName;
 
-    public Merchant(Double latitude, Double longitude, int merchantId, String merchantName) {
-        this.latitude = latitude;
-        this.longitude = longitude;
+    public Merchant() {
+    }
+
+    public Merchant(Coordinates coordinates, int merchantId, String merchantName) {
+        this.coordinates = coordinates;
         this.merchantId = merchantId;
         this.merchantName = merchantName;
     }

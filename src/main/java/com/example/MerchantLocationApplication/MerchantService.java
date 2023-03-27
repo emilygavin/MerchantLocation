@@ -1,6 +1,5 @@
 package com.example.MerchantLocationApplication;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +13,9 @@ public class MerchantService {
 
     private final MerchantRepository merchantRepository;
 
+    /**
+     * Min/Max Latitude/Longitudes of Ireland
+     */
     private double maxLatitude = 54.4902;
     private double minLatitude = 51.37;
     private double maxLongitude = -5.42;

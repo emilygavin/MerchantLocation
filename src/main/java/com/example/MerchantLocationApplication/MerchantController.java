@@ -38,15 +38,15 @@ public class MerchantController {
     }
 
     /** Update a Merchant by path variable ID */
-    @PutMapping(value = "/update/{id}")
-    public Merchant updateMerchant(@PathVariable String id, @RequestBody Merchant merchant) throws Exception {
-        return merchantService.updateMerchant(id, merchant);
+    @PutMapping(value = "/update")
+    public Merchant updateMerchant(@RequestBody Merchant merchant) throws Exception {
+        return merchantService.updateMerchant(merchant);
     }
 
     /** Get a list of the nearest merchants by latitude and longitude */
     @GetMapping(value = "/location")
-    public List<Merchant> fetchAllMerchantsByNearestLocation(@RequestParam(required = true) Double latitude,
-                                                             @RequestParam(required = true) Double longitude){
+    public List<Merchant> fetchAllMerchantsByNearestLocation(@RequestParam Double latitude,
+                                                             @RequestParam Double longitude){
         return merchantService.getAllMerchantsByNearestLocation(latitude, longitude);
     }
 }

@@ -1,4 +1,4 @@
-# Merchant Location Challenge
+# Merchant Location Application
 ## Project Description
 The idea of this project is to create an application that has a container full of merchant objects. The application allows the GET, POST, DELETE and PUT of these objects within the array.
 This application also allows the user to find a list of the nearest merchants by longitude and latitude.
